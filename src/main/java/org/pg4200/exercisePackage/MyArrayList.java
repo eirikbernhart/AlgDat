@@ -7,6 +7,8 @@ import org.pg4200.datastructure.delete.ArrayDeleteContainer;
  */
 public class MyArrayList<T> extends ArrayDeleteContainer<T>{
 
+    private Object[] doubledArray;
+
     public MyArrayList() {
         super();
     }
@@ -17,27 +19,14 @@ public class MyArrayList<T> extends ArrayDeleteContainer<T>{
 
     @Override
     public void add(T value) {
-        //int temp = data.length;
-        if(size == 0) {
-            data[size] = value;
-            size++;
-        }
-
-        Object[] doubledArray;
-
-
-        if(size >= data.length) {
-            size *= 2;
-            System.out.println("Doubling array, size is now: " + size);
-            System.out.println("Data.length: " + data.length);
-
-            doubledArray = new Object[size];
-            doubledArray[size-1] = value;
+        if(size == data.length) {
+            Object[] doubledArray = new Object[data.length * 2]; //New array to hold the old contents and get new
+            for(int i = 0; i < data.length; i++) {
+                doubledArray[i] = data[i];
+            }
             data = doubledArray;
-            add(value);
         }
-
-        //size++;
+        super.add(value);
     }
 
     @Override

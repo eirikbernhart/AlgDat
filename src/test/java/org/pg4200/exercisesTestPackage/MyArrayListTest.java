@@ -6,6 +6,7 @@ import org.pg4200.exercisePackage.MyArrayList;
 
 /**
  * Created by eirik on 05.09.2017.
+ * Deliberately set capacity to a value thats "bound" to cause size issues, and mitigate this issue by doubling the array: New arr*2.
  */
 public class MyArrayListTest extends DeleteContainerTestTemplate {
     @Override

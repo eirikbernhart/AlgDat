@@ -33,8 +33,8 @@
                 <version>3.1</version>
                 <inherited>true</inherited>
                 <configuration>
-                    <source>${version.java}</source>
-                    <target>${version.java}</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 
